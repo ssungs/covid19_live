@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<link rel='stylesheet' htef="./main.css">
+	</head>
+	<body>
+		<h1>Covid19 Live in Korea</h1>
+		<table>
+			<th class=datetime>날짜/시간</th>
+			<th class=city>도시</th>
+			<th class=gu>구</th>
+			<th class=cases>확진자 수</th>
+			<th class=total>확진자 총계</th>
+			<th class=src>상세내용</th>
+			{% for data in Covid19_live_data %}
+			<tr>
+				<td>{{ data['datetime'] }}</td>
+				<td>{{ data['city'] }}</td>
+				<td>{{ data['gu'] }}</td>
+				<td>{{ data['cases'] }}</td>
+				<td>{{ data['total'] }}</td>
+				<td>{{ data['src'] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
